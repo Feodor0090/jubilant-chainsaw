@@ -1,3 +1,8 @@
+def ask_list():
+    print("Введите числа через пробелы:", end='')
+    return [int(i) for i in input().split()]
+
+
 def bucket_sort(arr):
     max_value = max(arr)
     size = max_value / len(arr)
