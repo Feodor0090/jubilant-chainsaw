@@ -47,3 +47,8 @@ if __name__ == '__main__':
         lst = ask_list()
     sorted = bucket_sort(lst)
     print(sorted)
+    try:
+        with open('output', 'w') as o:
+            o.write(str(sorted))
+    except:
+        print('No output file found')
