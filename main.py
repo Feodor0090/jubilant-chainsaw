@@ -1,3 +1,6 @@
+import time
+
+
 def ask_list():
     print("Введите числа через пробелы:", end='')
     return [int(i) for i in input().split()]
@@ -45,10 +48,13 @@ if __name__ == '__main__':
             lst = [int(i) for i in f.readline().split()]
     except:
         lst = ask_list()
+    t1 = time.perf_counter()
     sorted = bucket_sort(lst)
+    t2 = time.perf_counter()
     print(sorted)
     try:
         with open('output', 'w') as o:
             o.write(str(sorted))
     except:
         print('No output file found')
+    print(f'Took {((t2 - t1) * 1000):0.6f} ms')
