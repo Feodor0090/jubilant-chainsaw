@@ -38,3 +38,12 @@ def insertion_sort(bucket):
             j = j - 1
         bucket[j + 1] = var
 
+
+if __name__ == '__main__':
+    try:
+        with open('input') as f:
+            lst = [int(i) for i in f.readline().split()]
+    except:
+        lst = ask_list()
+    sorted = bucket_sort(lst)
+    print(sorted)
